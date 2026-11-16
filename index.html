@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d170f">
+  <meta name="description" content="Ayyanar Gold Bank — Sayalgudi, Kadaladi, Kannirajapuram மற்றும் Narippayur கிளைகளில் தங்கம் மற்றும் வெள்ளி நகை அடமானக் கடன்.">
+  <title>Ayyanar Gold Bank | தங்கம் & வெள்ளி நகைக் கடன்</title>
+  <link rel="preconnect" href="https://api.gold-api.com">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="topline">
+    <span>தங்கம் & வெள்ளி நகைகளுக்கு நம்பிக்கையான அடமானக் கடன்</span>
+    <a href="tel:9942230385">முக்கிய கிளை · Sayalgudi <strong>99422 30385</strong></a>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Ayyanar Gold Bank முகப்பு">
+      <img src="./assets/ayyanar-gold-bank-logo.png" alt="Ayyanar Gold Bank லோகோ">
+      <span class="brand-copy"><strong>Ayyanar Gold Bank</strong><small>AYYANAR PAWN BROKER · SAYAL GUDI</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="மெனுவைத் திற">☰</button>
+    <nav class="site-nav" id="siteNav" aria-label="முதன்மை மெனு">
+      <a href="#calculator">கடன் கணிப்பான்</a>
+      <a href="#schemes">வட்டி & திட்டங்கள்</a>
+      <a href="#branches">கிளைகள்</a>
+      <a href="#assistant">தமிழ் உதவியாளர்</a>
+      <div class="language-switch" role="group" aria-label="Choose language">
+        <button id="langTamil" type="button" class="active" aria-pressed="true">தமிழ்</button>
+        <button id="langEnglish" type="button" aria-pressed="false">English</button>
+      </div>
+      <a class="nav-call" href="tel:9942230385">அழைக்கவும் <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> SAYAL GUDI · EST. WITH CARE</div>
+        <h1>உங்கள் நகைக்கு<br><em>உடனடி மதிப்பு.</em></h1>
+        <p class="hero-lead">தங்கம் மற்றும் வெள்ளி நகைகளை அடமானம் வைத்து, தெளிவான மதிப்பீட்டுடன் கடன் பெறுங்கள். நான்கு கிளைகளிலும் நேரில் உதவத் தயாராக இருக்கிறோம்.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#calculator">கடன் மதிப்பை கணக்கிடுங்கள் <span>↓</span></a>
+          <a class="text-link" href="tel:9942230385"><span class="phone-icon">☎</span> Sayalgudi கிளைக்கு அழைக்கவும்</a>
+        </div>
+        <div class="hero-proof"><span class="proof-star">✳</span><span>கடன் மதிப்பீடு நகை சோதனை மற்றும் கிளை விகிதத்தின் அடிப்படையில் உறுதி செய்யப்படும்.</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-photo-frame">
+          <img src="./assets/yukesh-varma-md.jpg" alt="Ayyanar Gold Bank மேலாண்மை இயக்குநர் Yukesh Varma">
+          <div class="photo-caption"><span class="caption-kicker">உங்கள் தொடர்பு</span><strong>Yukesh Varma</strong><span>Managing Director · Pawn Broker</span><a href="tel:9443178862">☎ &nbsp;94431 78862</a></div>
+        </div>
+        <div class="hero-seal"><span>AGB</span><small>நம்பிக்கை<br>மதிப்பு<br>சேவை</small></div>
+        <div class="hero-note"><span class="note-mark">✦</span><span>நேரடி விலை<br><b>தெளிவான கணிப்பு</b></span></div>
+      </div>
+    </section>
+
+    <section class="rate-strip" aria-label="நேரடி தங்கம் மற்றும் வெள்ளி spot விலை">
+      <div class="rate-strip-intro"><span class="live-pulse"></span><span>நேரடி spot விலை</span><small>சந்தை குறிப்பு · INR / கிராம்</small></div>
+      <div class="spot-card"><span class="spot-icon gold-icon">Au</span><span class="spot-name"><span>தங்கம் · 24K</span><small>24K SPOT</small></span><strong id="goldSpot">—</strong><span class="spot-unit">/ கிராம்</span></div>
+      <div class="spot-divider"></div>
+      <div class="spot-card"><span class="spot-icon gold-icon">916</span><span class="spot-name"><span>தங்கம் · 916</span><small>22K REFERENCE</small></span><strong id="gold916Spot">—</strong><span class="spot-unit">/ கிராம்</span></div>
+      <div class="spot-divider"></div>
+      <div class="spot-card"><span class="spot-icon silver-icon">Ag</span><span class="spot-name">வெள்ளி <small>SILVER</small></span><strong id="silverSpot">—</strong><span class="spot-unit">/ கிராம்</span></div>
+      <div class="spot-status" id="spotStatus" role="status">விலையைப் பெறுகிறது…</div>
+      <button class="refresh-rate" id="refreshRates" type="button" aria-label="விலைகளைப் புதுப்பிக்க">↻</button>
+    </section>
+    <p class="rate-disclaimer">இந்த spot விலைகள் சந்தை குறிப்பு மட்டுமே; அடமானத் தொகை purity, கல்/இதர எடை, நகை ஆய்வு மற்றும் அன்றைய கிளை விகிதத்தைப் பொறுத்து மாறும்.</p>
+
+    <section class="calculator-section section-wrap" id="calculator">
+      <div class="section-heading">
+        <div><div class="eyebrow">உங்கள் நகையின் மதிப்பு</div><h2>கடன் மதிப்பீட்டு<br><em>கணிப்பான்</em></h2></div>
+        <p>எடை, purity மற்றும் விலை உள்ளிட்ட விவரங்களை உள்ளிடுங்கள். இது முன்கணிப்பு மட்டுமே; இறுதி மதிப்பீடு கிளையில் உறுதி செய்யப்படும்.</p>
+      </div>
+      <div class="calculator-card">
+        <div class="calc-inputs">
+          <div class="calc-topline"><span class="step-tag">01</span><span>நகை விவரங்கள் <small>JEWELLERY DETAILS</small></span></div>
+          <div class="metal-switch" role="group" aria-label="நகை வகையைத் தேர்ந்தெடுக்க">
+            <button class="metal-choice active" type="button" data-metal="gold"><span class="metal-dot gold-dot"></span> தங்கம் <small>GOLD</small></button>
+            <button class="metal-choice" type="button" data-metal="silver"><span class="metal-dot silver-dot"></span> வெள்ளி <small>SILVER</small></button>
+          </div>
+          <div class="field-grid">
+            <label class="field"><span>மொத்த எடை <small>Gross weight</small></span><span class="input-wrap"><input id="grossWeight" type="number" min="0" step="0.001" placeholder="0.000" inputmode="decimal"><b>g</b></span></label>
+            <label class="field"><span>கல் / மணிகள் எடை <small>Stone weight</small></span><span class="input-wrap"><input id="stoneWeight" type="number" min="0" step="0.001" value="0" inputmode="decimal"><b>g</b></span></label>
+            <label class="field"><span>இதர கழிவு <small>Other deduction</small></span><span class="input-wrap"><input id="otherDeduction" type="number" min="0" step="0.001" value="0" inputmode="decimal"><b>g</b></span></label>
+            <label class="field"><span>சோதனை purity <small>Tested purity</small></span><span class="input-wrap"><input id="purity" type="number" min="1" max="100" step="0.1" value="88" inputmode="decimal"><b>%</b></span></label>
+          </div>
+          <div class="net-weight-row"><span>கணக்கில் வரும் நிகர எடை <small>Net weight</small></span><strong id="netWeight">0.000 <small>g</small></strong></div>
+          <div class="field rate-field"><label for="rateInput">நேரடி விலை / கிராம் <small>Spot benchmark · editable</small></label><span class="input-wrap"><b class="rupee">₹</b><input id="rateInput" type="number" min="0" step="0.01" placeholder="விலையை ஏற்றுகிறது…" inputmode="decimal"><button id="useLiveRate" type="button" title="நேரடி spot விலையைப் பயன்படுத்து">நேரடி விலை</button></span></div>
+          <div class="calc-note"><span>ⓘ</span><span>கல் எடை மற்றும் இதர கழிவுகள் நிகர எடையிலிருந்து கழிக்கப்படும். purity-ஐ கிளைச் சோதனைக்குப் பிறகு திருத்தலாம்.</span></div>
+        </div>
+        <div class="calc-results">
+          <div class="calc-topline"><span class="step-tag step-gold">02</span><span>மதிப்பீட்டு விருப்பம் <small>ADVANCE ESTIMATE</small></span></div>
+          <div class="result-summary"><span>கணக்கிடப்பட்ட நிகர மதிப்பு</span><strong id="gramValue">₹ —</strong><small>நிகர எடை × விலை × purity</small></div>
+          <div class="band-heading"><span>முன்கணிப்பு வரம்பைத் தேர்வு செய்யுங்கள்</span><small>மதிப்பின் சதவீதம்</small></div>
+          <div class="band-list" role="group" aria-label="கடன் மதிப்பீட்டு சதவீதம்">
+            <button class="band-option active" type="button" data-band="95"><span class="radio-mark"></span><span class="band-percent">95%</span><span class="band-detail">உயர் மதிப்பீடு</span><strong class="band-value" data-value-for="95">₹ —</strong></button>
+            <button class="band-option" type="button" data-band="90"><span class="radio-mark"></span><span class="band-percent">90%</span><span class="band-detail">மதிப்பீடு</span><strong class="band-value" data-value-for="90">₹ —</strong></button>
+            <button class="band-option" type="button" data-band="80"><span class="radio-mark"></span><span class="band-percent">80%</span><span class="band-detail">மதிப்பீடு</span><strong class="band-value" data-value-for="80">₹ —</strong></button>
+            <button class="band-option" type="button" data-band="70"><span class="radio-mark"></span><span class="band-percent">70%</span><span class="band-detail">மதிப்பீடு</span><strong class="band-value" data-value-for="70">₹ —</strong></button>
+            <button class="band-option" type="button" data-band="60"><span class="radio-mark"></span><span class="band-percent">60%</span><span class="band-detail">மதிப்பீடு</span><strong class="band-value" data-value-for="60">₹ —</strong></button>
+          </div>
+          <div class="selected-loan"><span>தேர்ந்தெடுத்த கடன் முன்கணிப்பு <small id="selectedBandLabel">95% மதிப்பீடு</small></span><strong id="loanValue">₹ —</strong></div>
+          <div class="interest-estimate">
+            <div class="interest-estimate-top"><span>வட்டி முன்கணிப்பு</span><span class="simple-label">simple estimate</span></div>
+            <div class="term-switch" role="group" aria-label="காலத் திட்டத்தைத் தேர்ந்தெடுக்க">
+              <button class="term-choice active" type="button" data-months="1">மாதம்</button>
+              <button class="term-choice" type="button" data-months="3">3 மாதம்</button>
+              <button class="term-choice" type="button" data-months="6">6 மாதம்</button>
+            </div>
+            <div class="rate-choices" id="rateChoices" aria-label="மாத வட்டி விகிதத்தைத் தேர்ந்தெடுக்க"></div>
+            <div class="interest-total"><span>மதிப்பிடப்பட்ட வட்டி <small id="interestBreakdown">வட்டி tier-ஐத் தேர்வு செய்யுங்கள்</small></span><strong id="interestValue">₹ —</strong></div>
+            <div class="payable-total"><span>மொத்தம் <small>முன்கணிப்பு</small></span><strong id="payableValue">₹ —</strong></div>
+          </div>
+          <p class="estimate-footnote">வட்டி: முதன்மைத் தொகை × மாத விகிதம் × மாதங்கள். இது எளிய வட்டி முன்கணிப்பு; இறுதி வட்டி/கட்டணங்களை கிளையில் உறுதி செய்யவும்.</p>
+          <a class="button button-gold full-button" href="tel:9942230385">இறுதி மதிப்பீட்டிற்கு கிளையை அழைக்கவும் <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="schemes-section" id="schemes">
+      <div class="section-wrap schemes-wrap">
+        <div class="section-heading scheme-heading"><div><div class="eyebrow eyebrow-light">எளிய வட்டி விவரம்</div><h2>திட்டத்தைத் தேர்வு செய்யுங்கள்.<br><em>விகிதத்தை உறுதி செய்யுங்கள்.</em></h2></div><p>கீழே உள்ளவை மாதாந்திர வட்டி விகிதங்கள். பொருந்தும் tier மற்றும் விதிமுறைகளை அடமானம் வைக்கும் முன் கிளையில் உறுதி செய்யவும்.</p></div>
+        <div class="scheme-content">
+          <div class="scheme-periods">
+            <div class="scheme-period"><span class="period-number">01</span><div><strong>மாதாந்திர திட்டம்</strong><small>MONTHLY</small></div><span class="period-arrow">↗</span></div>
+            <div class="scheme-period"><span class="period-number">03</span><div><strong>3 மாத திட்டம்</strong><small>THREE MONTHS</small></div><span class="period-arrow">↗</span></div>
+            <div class="scheme-period"><span class="period-number">06</span><div><strong>6 மாத திட்டம்</strong><small>SIX MONTHS</small></div><span class="period-arrow">↗</span></div>
+          </div>
+          <div class="rate-panel">
+            <div class="rate-panel-title"><span>மாத வட்டி விகிதங்கள்</span><small>முதன்மைத் தொகைக்கு, மாதத்திற்கு</small></div>
+            <div class="rate-type-row"><span class="rate-type-icon gold-type">Au</span><div><strong>தங்க நகை</strong><small>Gold jewellery</small></div><div class="rate-pills"><span>0.55%</span><span>0.97%</span><span>1.47%</span><span>1.97%</span><span>2.47%</span></div></div>
+            <div class="rate-type-row"><span class="rate-type-icon silver-type">Ag</span><div><strong>வெள்ளி நகை</strong><small>Silver jewellery</small></div><div class="rate-pills"><span>2.50%</span></div></div>
+            <p class="rate-panel-note">எந்த gold rate tier எந்தத் திட்டத்திற்குப் பொருந்தும் என்பதை கிளையில் உறுதி செய்யவும். இந்த வட்டி பட்டியல், calculator-இல் உள்ள 60%–95% மதிப்பீட்டு வரம்புகளிலிருந்து தனியாகும்.</p>
+          </div>
+        </div>
+        <div class="scheme-bottom-note"><span>✦</span> வெளிப்படையான விகிதம் · உங்கள் கேள்விகளுக்கு கிளையில் நேரடி விளக்கம்</div>
+      </div>
+    </section>
+
+    <section class="branches-section section-wrap" id="branches">
+      <div class="section-heading"><div><div class="eyebrow">உங்களுக்கு அருகில்</div><h2>நான்கு கிளைகள்.<br><em>ஒரே அக்கறை.</em></h2></div><p>நகை மதிப்பீடு, வட்டி விவரம் மற்றும் அடமான செயல்முறைக்கு எந்தக் கிளையையும் தொடர்பு கொள்ளுங்கள்.</p></div>
+      <div class="branch-grid">
+        <article class="branch-card branch-main"><div class="branch-card-top"><span class="branch-number">01 / MAIN</span><span class="branch-pin">⌖</span></div><div class="branch-mark">S</div><h3>Sayalgudi</h3><p>முக்கிய கிளை · 10/72, ECR Road,<br>Sayalgudi</p><div class="branch-card-bottom"><a href="tel:9942230385"><span>☎</span> 99422 30385</a><span class="branch-primary">MAIN BRANCH</span></div></article>
+        <article class="branch-card"><div class="branch-card-top"><span class="branch-number">02 / BRANCH</span><span class="branch-pin">⌖</span></div><div class="branch-mark">K</div><h3>Kadaladi</h3><p>அடமான சேவை மற்றும்<br>நகை மதிப்பீடு</p><div class="branch-card-bottom"><a href="tel:9363730585"><span>☎</span> 93637 30585</a><span class="branch-primary">CALL BRANCH</span></div></article>
+        <article class="branch-card"><div class="branch-card-top"><span class="branch-number">03 / BRANCH</span><span class="branch-pin">⌖</span></div><div class="branch-mark">K</div><h3>Kannirajapuram</h3><p>அடமான சேவை மற்றும்<br>நகை மதிப்பீடு</p><div class="branch-card-bottom"><a href="tel:9363730685"><span>☎</span> 93637 30685</a><span class="branch-primary">CALL BRANCH</span></div></article>
+        <article class="branch-card"><div class="branch-card-top"><span class="branch-number">04 / BRANCH</span><span class="branch-pin">⌖</span></div><div class="branch-mark">N</div><h3>Narippayur</h3><p>அடமான சேவை மற்றும்<br>நகை மதிப்பீடு</p><div class="branch-card-bottom"><a href="tel:9363030485"><span>☎</span> 93630 30485</a><span class="branch-primary">CALL BRANCH</span></div></article>
+      </div>
+    </section>
+
+    <section class="assistant-section" id="assistant">
+      <div class="section-wrap assistant-wrap">
+        <div class="assistant-intro"><div class="eyebrow eyebrow-light">வணக்கம் · வணிகத் தகவல் உதவி</div><h2>தமிழில் கேளுங்கள்.<br><em>உடனே தெரிந்துகொள்ளுங்கள்.</em></h2><p>கிளை எண்கள், வட்டி விகிதங்கள், காலத் திட்டங்கள் மற்றும் பணம் செலுத்தும் வழிகள் பற்றி கேளுங்கள். மைக்ரோஃபோன் இருந்தால் குரலிலும் பேசலாம்.</p><div class="assistant-badge"><span class="assistant-spark">✦</span><span>Vapi இல்லை · Tamil voice API இல்லை<br><small>உலாவியின் voice வசதி கிடைத்தால் பயன்படுத்தப்படும்</small></span></div></div>
+        <div class="chat-card">
+          <div class="chat-header"><div class="chat-avatar">A</div><div><strong>அய்யனார் உதவியாளர்</strong><small><span class="online-dot"></span> தமிழ் · வணிகத் தகவல்</small></div><span class="chat-lang">TA</span></div>
+          <div class="chat-messages" id="chatMessages" aria-live="polite" aria-label="உதவியாளர் உரையாடல்"><div class="chat-message bot-message"><span class="bot-label">AGB உதவி</span><p>வணக்கம்! தங்கம் / வெள்ளி வட்டி, கிளை எண்கள், UPI அல்லது கடன் கணிப்பான் பற்றி கேளுங்கள்.</p></div></div>
+          <div class="prompt-chips"><button type="button" data-prompt="எல்லா கிளைகளின் தொலைபேசி எண்களையும் சொல்லுங்கள்">கிளை எண்கள்</button><button type="button" data-prompt="தங்கம் மற்றும் வெள்ளி வட்டி விகிதம் என்ன?">வட்டி விகிதம்</button><button type="button" data-prompt="UPI மூலம் எப்படி செலுத்துவது?">UPI</button></div>
+          <div class="chat-compose"><button class="mic-button" id="micButton" type="button" aria-label="தமிழில் குரல் மூலம் கேட்க" title="குரல் மூலம் கேட்க">🎙</button><label class="sr-only" for="chatInput">உங்கள் கேள்வி</label><input id="chatInput" type="text" placeholder="உங்கள் கேள்வியைத் தட்டச்சு செய்யுங்கள்…"><button class="send-button" id="sendButton" type="button" aria-label="அனுப்பு">↑</button></div>
+          <p class="voice-status" id="voiceStatus" role="status">உதவி பதில்கள் தளத்திலேயே உருவாகும்; உரையாடல் சேமிக்கப்படாது.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pledge-section section-wrap" id="pledge">
+      <div class="pledge-icon">✧</div>
+      <div class="pledge-copy"><div class="eyebrow">அடமான உறுதிமொழி</div><h2>தெளிவான விதிமுறை.<br><em>கிளையில் கையொப்பம்.</em></h2><p class="pledge-tamil">அடமானம் வைத்த பின், பெற்ற பணத்திற்கான தொகையையும் மாத வட்டியையும் ஒப்புக்கொண்ட நிபந்தனைகளின்படி செலுத்துவதாக வாடிக்கையாளர் உறுதி அளித்து கையொப்பமிடுவார்.</p><p class="pledge-english">“Promise to pay Sri AYYANAR PAWN BROKER or order the sum of Rs. ______ for cash received with interest at ______% per month from this date and at the Pawn Broker ruling rate prevailing from time to time with monthly rates.”</p><div class="pledge-signoff"><strong>Yukesh Varma</strong><span>Pawn Broker · 10/72, ECR Road, Sayalgudi</span></div></div>
+      <div class="pledge-stamp"><span>AGB</span><small>PAWN<br>BROKER</small><b>✦</b></div>
+    </section>
+
+    <section class="contact-band section-wrap" id="contact">
+      <div><div class="eyebrow eyebrow-light">நாங்கள் உதவத் தயாராக இருக்கிறோம்</div><h2>அடுத்த படியை<br><em>ஒன்றாகப் பார்ப்போம்.</em></h2></div>
+      <div class="contact-details"><a href="tel:9443178862"><small>மேலாண்மை இயக்குநர் · MD</small><strong>94431 78862 <span>↗</span></strong></a><a href="mailto:agbsayalkudi@gmail.com"><small>மின்னஞ்சல் · EMAIL</small><strong>agbsayalkudi@gmail.com <span>↗</span></strong></a><div class="upi-line"><small>GPay · PhonePe · Paytm</small><strong>93637 38862</strong><span>UPI கட்டண எண்</span></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="#home"><img src="./assets/ayyanar-gold-bank-logo.png" alt=""><span><strong>Ayyanar Gold Bank</strong><small>10/72, ECR Road, Sayalgudi</small></span></a><p>© <span id="year"></span> Ayyanar Gold Bank. அனைத்தும் உரிமை பெற்றவை.</p><a class="footer-top" href="#home">மேலே திரும்பு ↑</a></footer>
+  <a class="mobile-call" href="tel:9942230385"><span>☎</span> Sayalgudi கிளைக்கு அழைக்கவும் <strong>99422 30385</strong></a>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
