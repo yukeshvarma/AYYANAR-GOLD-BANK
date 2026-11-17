@@ -7,15 +7,15 @@ Static bilingual Tamil/English website files for GitHub Pages and Netlify.
 - `index.html`
 - `styles.css`
 - `app.js`
-- `assets/ayyanar-gold-bank-logo.png`
-- `assets/yukesh-varma-md.jpg`
+- `assets/ayyanar-gold-bank-logo.png` — original logo file
+- `assets/yukesh-varma-md.jpg` — original MD photo
 - `netlify.toml`
 
-The logo and MD photo use relative paths under `assets/`. Keep the `assets` folder beside `index.html` in the published root.
+The logo and MD photo are embedded directly in `index.html`, so they still display if a host accidentally omits the `assets/` folder. The original image files are included in `assets/` as well.
 
 ## Netlify
 
-The included `netlify.toml` sets the publish directory to the repository root. For a manual deploy, extract this ZIP first and upload the folder containing `index.html` and `assets/`—do not upload only the HTML file.
+The included `netlify.toml` sets the publish directory to the repository root. For a manual deploy, extract this ZIP first and upload the folder containing `index.html`—do not upload only the HTML file.
 
 ## GitHub Pages
 
